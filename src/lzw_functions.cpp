@@ -177,8 +177,13 @@ int readAndCompress(std::string pathIn = "",
 
     std::vector<int> dataCompressed = compress(buffer, buf_size);
 
+    delete buffer;
+
+    int sizeCompressed = dataCompressed.size() * sizeof(int);
+
     writeFile(pathOut, dataCompressed);
 
+    std::cout << "Compression ratio: " << (double)sizeCompressed / buf_size * 100 << "%" << std::endl;
 
     return 0;
 }
