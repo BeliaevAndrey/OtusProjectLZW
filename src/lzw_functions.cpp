@@ -20,8 +20,6 @@ std::vector<int> compress(const char* line_in, size_t buff_size)
 
     for (int i = 0; i < currCode; i++) dict[std::string(1, i)] = i; 
     
-    
-
     for (size_t i = 0; i < buff_size; i++) 
     {
         char c = line_in[i];
@@ -54,8 +52,6 @@ std::string decompress(std::vector<int> compressed)
     std::map<int, std::string> dict; 
 
     for(int i = 0; i < currCode; i++) dict[i] = std::string(1, i);
-
-    std::cout << "\ncompressed.size(): " << compressed.size() << std::endl;
 
     std::string word(1, compressed[vectPos++]);
     std::string result{word};
@@ -106,6 +102,8 @@ const char* readFile(std::string path, size_t &buf_size)
 
 int writeFile(std::string path, const char *buffer, size_t buff_size)
 {
+    std::cout << "Writing data..." << std::endl;
+
     std::ofstream *ofs = new std::ofstream(path, std::ios::binary);
     if (!ofs->is_open()) throw std::invalid_argument("File  not found");
     
@@ -130,7 +128,8 @@ int writeFile(std::string path, std::vector<int> &buffer)
     if (!ofs->is_open()) throw std::invalid_argument("File  not found");
     
     size_t buff_size = buffer.size();
-    std::cout << "buff_size: " << buff_size << std::endl;
+
+    std::cout << "Compressed size: " << buff_size * sizeof(int) << std::endl;
     
     for (size_t i = 0; i < buff_size; i++ ) ofs->write(reinterpret_cast<char*>(&buffer[i]), sizeof(int));
 
@@ -167,13 +166,18 @@ std::vector<int> readIntFile(std::string path)
 
 
 
-int readAndCompress() 
+int readAndCompress(std::string pathIn = "", 
+                    std::string pathOut = "") 
 {
-    std::cout << "readAndCompress..." << std::endl;
+    std::cout << "Read and Compress..." << std::endl;
     
-    std::string  pathIn{TESTSRC + "test_picture.bmp"};
-    std::string pathOut{TESTCMP + "test_picture.bin"};
-
+    if (pathIn.empty() || pathOut.empty())  /* to be removed */
+    {
+        std::string  pathIn{TESTSRC + "test3.txt"};
+        std::string pathOut{TESTCMP + "test3.bin"};
+        std::cout << "Lost filenames, using default" << std::endl;
+    }
+    
     size_t buf_size{0};
 
     const char* buffer = readFile(pathIn, buf_size);
@@ -186,19 +190,23 @@ int readAndCompress()
     return 0;
 }
 
-int readAndDecompress() 
+int readAndDecompress(std::string pathIn = "", 
+                      std::string pathOut = "") 
 {
     
-    std::cout << "readAndDecompress..." << std::endl;
+    std::cout << "Read and Decompress..." << std::endl;
 
-    // std::string  pathIn{TESTCMP + "test3.bin"};
-    // std::string pathOut{TESTBCK + "test3.txt"};
-    std::string  pathIn{TESTCMP + "test_picture.bin"};
-    std::string pathOut{TESTBCK + "test_picture.bmp"};
-
+    
+    if (pathIn.empty() || pathOut.empty()) /* to be removed */
+    {
+        std::string  pathIn{TESTSRC + "test3.txt"};
+        std::string pathOut{TESTCMP + "test3.bin"};
+        std::cout << "Lost filenames, using default" << std::endl;
+    }
+    
     std::vector<int> dataCompressed = readIntFile(pathIn);
 
-    std::cout <<"Compressed data size: "<< dataCompressed.size() << std::endl;
+    std::cout <<"Compressed data size: "<< dataCompressed.size() * sizeof(int) << std::endl;
 
     if (dataCompressed.size() == 0) throw std::invalid_argument("Vector error");
 
@@ -215,11 +223,84 @@ int readAndDecompress()
 }
 
 
-int main()
+int parseargs(int argc, char **argv)
 {
 
-    readAndCompress();
-    readAndDecompress();
+    void printHelp();
+
+    std::string c{"-c"};
+    std::string d{"-d"};
+
+   
+    if (argc < 3)
+    {
+        printHelp();
+        return 0;
+    }
+
+    std::string file_in;
+    std::string file_out;
+
+    if (c.compare(argv[1]) == 0)
+    {
+        file_in = argv[2];
+        if (argc > 3)
+            file_out = argv[3];
+        else
+        {
+            file_out = file_in + ".bin";
+        }
+        std::cout << "file_in:  "<< file_in  << "\n"
+                  << "file_out: "<< file_out 
+                  << std::endl << std::endl;
+
+        readAndCompress(file_in, file_out);
+    }
+
+    else if (d.compare(argv[1]) == 0)
+    {
+        file_in = argv[2];
+        if (file_in.find_first_of(".bin") == 0)
+        {
+            std::cout << " Wrong file extension"<< std::endl;
+            return -1;
+        }
+        if (argc > 3)
+            file_out = argv[3];
+        else
+        {
+            file_out = file_in.substr(0, file_in.find_first_of(".bin")) + ".decompressed";
+        }
+        std::cout << "file_in  : " << file_in << "\n"
+                  << "file_out : " << file_out << std::endl;
+    
+        readAndDecompress(file_in, file_out);
+    }
 
     return 0;
+}
+
+void printHelp()
+{
+    std::string usage{
+        "Usage:\n"\
+        "lzw -[c|d] file-in file-out\n"\
+        "Commands:\n"\
+        "-c\t\tcompress\n"\
+        "-d\t\tdecompress\n\n"\
+        "file-in \tinput path/to/file/filename\n"\
+        "file-out\toutput path/to/file/filename\n"\
+        "compressed file extension: '.bin'\n"
+    };
+
+    std::cout << usage << std::endl; 
+}
+
+int main(int argc, char** argv)
+{
+    
+    if (argc > 1) return parseargs(argc, argv);
+    else printHelp();
+    return 0;
+
 }
