@@ -4,9 +4,7 @@
 #include <fstream>
 #include <exception>
 
-std::string TESTSRC = "../TestData/src/";
-std::string TESTCMP = "../TestData/compressed/";
-std::string TESTBCK = "../TestData/back/";
+
 
 std::vector<int> compress(const char* line_in, size_t buff_size) 
 {
@@ -171,17 +169,12 @@ int readAndCompress(std::string pathIn = "",
 {
     std::cout << "Read and Compress..." << std::endl;
     
-    if (pathIn.empty() || pathOut.empty())  /* to be removed */
-    {
-        std::string  pathIn{TESTSRC + "test3.txt"};
-        std::string pathOut{TESTCMP + "test3.bin"};
-        std::cout << "Lost filenames, using default" << std::endl;
-    }
-    
     size_t buf_size{0};
 
     const char* buffer = readFile(pathIn, buf_size);
     
+    std::cout << "Source file size: " << buf_size << std::endl;
+
     std::vector<int> dataCompressed = compress(buffer, buf_size);
 
     writeFile(pathOut, dataCompressed);
@@ -195,14 +188,6 @@ int readAndDecompress(std::string pathIn = "",
 {
     
     std::cout << "Read and Decompress..." << std::endl;
-
-    
-    if (pathIn.empty() || pathOut.empty()) /* to be removed */
-    {
-        std::string  pathIn{TESTSRC + "test3.txt"};
-        std::string pathOut{TESTCMP + "test3.bin"};
-        std::cout << "Lost filenames, using default" << std::endl;
-    }
     
     std::vector<int> dataCompressed = readIntFile(pathIn);
 
@@ -227,10 +212,6 @@ int parseargs(int argc, char **argv)
 {
 
     void printHelp();
-
-    std::string c{"-c"};
-    std::string d{"-d"};
-
    
     if (argc < 3)
     {
@@ -238,10 +219,13 @@ int parseargs(int argc, char **argv)
         return 0;
     }
 
+    std::string key_c{"-c"};
+    std::string key_d{"-d"};
+
     std::string file_in;
     std::string file_out;
 
-    if (c.compare(argv[1]) == 0)
+    if (key_c.compare(argv[1]) == 0)
     {
         file_in = argv[2];
         if (argc > 3)
@@ -255,14 +239,15 @@ int parseargs(int argc, char **argv)
                   << std::endl << std::endl;
 
         readAndCompress(file_in, file_out);
+        return 0;
     }
 
-    else if (d.compare(argv[1]) == 0)
+    else if (key_d.compare(argv[1]) == 0)
     {
         file_in = argv[2];
         if (file_in.find_first_of(".bin") == 0)
         {
-            std::cout << " Wrong file extension"<< std::endl;
+            std::cout << "Wrong file extension"<< std::endl;
             return -1;
         }
         if (argc > 3)
@@ -272,12 +257,18 @@ int parseargs(int argc, char **argv)
             file_out = file_in.substr(0, file_in.find_first_of(".bin")) + ".decompressed";
         }
         std::cout << "file_in  : " << file_in << "\n"
-                  << "file_out : " << file_out << std::endl;
+                  << "file_out : " << file_out 
+                  << std::endl << std::endl;
     
         readAndDecompress(file_in, file_out);
+        return 0;
     }
+    
+    std::cout << "\nWrong command.\n" << std::endl;
 
-    return 0;
+    printHelp();
+    return -1;
+
 }
 
 void printHelp()
