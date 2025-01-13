@@ -8,7 +8,7 @@ std::vector<int> compress(std::string line_in)
     int startLen{256};
     std::map<std::string, int> dict;
 
-    for (size_t i = 0; i < startLen; i++) dict[std::string(1, i)] = i; 
+    for (int i = 0; i < startLen; i++) dict[std::string(1, i)] = i; 
     
     std::string word;
     std::vector<int> result;
@@ -35,7 +35,7 @@ std::string decompress(std::vector<int> compressed)
     int startLen{256};
 
     int vectPos{0};
-    size_t vectLen = compressed.size();
+    int vectLen = compressed.size();
 
     std::map<int, std::string> dict; 
 
@@ -51,7 +51,7 @@ std::string decompress(std::vector<int> compressed)
         int code = compressed[vectPos];
         if (dict.contains(code)) substr = dict[code];  
         else if (code == startLen) substr = word + word[0];
-        else throw "BAD INPUT PARAMETER";
+        else throw "ERROR";
 
         result += substr;
         dict[startLen++] = word + substr[0];
