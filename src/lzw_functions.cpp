@@ -250,7 +250,7 @@ int parseargs(int argc, char **argv)
     else if (key_d.compare(argv[1]) == 0)
     {
         file_in = argv[2];
-        if (file_in.find_first_of(".bin") == 0)
+        if (!file_in.ends_with(".bin"))
         {
             std::cout << "Wrong file extension"<< std::endl;
             return -1;
@@ -259,7 +259,7 @@ int parseargs(int argc, char **argv)
             file_out = argv[3];
         else
         {
-            file_out = file_in.substr(0, file_in.find_first_of(".bin")) + ".decompressed";
+            file_out = file_in.substr(0, file_in.find_last_of(".bin") - 3) + ".decompressed";
         }
         std::cout << "file_in  : " << file_in << "\n"
                   << "file_out : " << file_out 
