@@ -3,11 +3,60 @@
 #include <vector>
 #include <fstream>
 #include <exception>
+#include <ctime>
 
 
-
-std::vector<int> compress(const char* line_in, size_t buff_size) 
+class DecompressError : public std::exception
 {
+public:
+    const char* what() const noexcept override{ return "Error while reading codes"; }
+};
+
+class FileOpenError : public std::exception
+{
+    const char* msg;
+public:
+    FileOpenError(int condition) 
+    {
+        if (condition == 1) msg = "Error while opening input file";
+        else if (condition == 1) msg = "Error while opening output file";
+        else msg = "Other file opening error.";
+    }
+    const char* what() const noexcept override{ return msg; }
+};
+
+class EmptyFileError : public std::exception 
+{
+public:
+    const char* what() const noexcept override { return "File is empty!"; }
+};
+
+
+std::ifstream get_ifstream(std::string &path, size_t &file_size)
+{
+    std::ifstream ifs(path, std::ios::binary | std::ios::ate);
+    if (!ifs.is_open()) throw FileOpenError(1);
+
+    file_size = ifs.tellg();
+    
+    ifs.seekg(0);
+
+    return ifs;
+}
+
+
+std::vector<int> compress(std::string &path, size_t &file_size) 
+{
+    std::ifstream ifs;
+    try { ifs = get_ifstream(path, file_size); } 
+    catch(FileOpenError & e)
+    {
+        std::cerr << e.what() << std::endl;
+        throw e;
+    }
+
+    if (file_size == 0) throw EmptyFileError();
+
     std::cout << "Compressing..." << std::endl;
    
     int currCode{256};
@@ -18,9 +67,10 @@ std::vector<int> compress(const char* line_in, size_t buff_size)
 
     for (int i = 0; i < currCode; i++) dict[std::string(1, i)] = i; 
     
-    for (size_t i = 0; i < buff_size; i++) 
+    for (size_t i = 0; i < file_size; i++) 
     {
-        char c = line_in[i];
+        char c;
+        ifs.read(&c, sizeof(c));
         std::string current = word + c;
         if (dict.contains(current)) word = current;
         else {
@@ -32,33 +82,44 @@ std::vector<int> compress(const char* line_in, size_t buff_size)
 
     if (!word.empty()) result.push_back(dict[word]);
 
+    ifs.close();
 
     return result;
 }
 
 
-std::string decompress(std::vector<int> compressed)
+std::string decompress(std::string path, size_t &file_size)
 {
+
+    std::ifstream ifs;
+
+    try { ifs = get_ifstream(path, file_size); }
+    catch (std::invalid_argument &e)
+    {
+        std::cerr << e.what() << std::endl;
+        throw e;
+    }
+
+    if (file_size == 0) throw EmptyFileError();
 
     std::cout << "Decompressing..." << std::endl;
 
     int currCode{256};
 
-    int vectPos{0};
-    int vectLen = compressed.size();
-
     std::map<int, std::string> dict; 
 
     for(int i = 0; i < currCode; i++) dict[i] = std::string(1, i);
 
-    std::string word(1, compressed[vectPos++]);
+    int code{0};
+    ifs.read((char *)&code, sizeof(code));
+    std::string word(1, code);
+
     std::string result{word};
 
     std::string substr;
 
-    for (; vectPos < vectLen; vectPos++) 
+    while(ifs.read((char *)&code, sizeof(code))) 
     {
-        int code = compressed[vectPos];
         if (dict.contains(code)) substr = dict[code];  
         else if (code == currCode) substr = word + word[0];
         else throw std::invalid_argument("Error while decompressing");
@@ -68,33 +129,7 @@ std::string decompress(std::vector<int> compressed)
         word = substr;
     }
 
-
     return result;
-}
-
-
-const char* readFile(std::string path, size_t &buf_size)
-{
-    std::cout << "Reading chars..." << std::endl;
-
-    std::ifstream *ifs = new std::ifstream(path, std::ios::binary | std::ios::ate);
-
-    if (!ifs->is_open()) throw std::invalid_argument("File  not found");
-    buf_size = ifs->tellg();
-    ifs->seekg(0);
-
-    char* buffer = new char[buf_size];
-
-    for (size_t i = 0; i < buf_size; i++ ) ifs->read(&buffer[i], sizeof(*buffer));
-    
-    buffer[buf_size] = '\0';
-
-
-    ifs->close();
-
-    delete ifs;
-
-    return buffer;
 }
 
 
@@ -103,7 +138,7 @@ int writeFile(std::string path, const char *buffer, size_t buff_size)
     std::cout << "Writing data..." << std::endl;
 
     std::ofstream *ofs = new std::ofstream(path, std::ios::binary);
-    if (!ofs->is_open()) throw std::invalid_argument("File  not found");
+    if (!ofs->is_open()) throw FileOpenError(2);
     
     for (size_t i = 0; i < buff_size; i++ ) ofs->write(&buffer[i], sizeof(buffer[i]));
 
@@ -123,12 +158,10 @@ int writeFile(std::string path, std::vector<int> &buffer)
     std::cout << "Writing ints..." << std::endl;
 
     std::ofstream *ofs = new std::ofstream(path, std::ios::binary);
-    if (!ofs->is_open()) throw std::invalid_argument("File  not found");
+    if (!ofs->is_open()) throw FileOpenError(2);
     
     size_t buff_size = buffer.size();
-
-    std::cout << "Compressed size: " << buff_size * sizeof(int) << std::endl;
-    
+  
     for (size_t i = 0; i < buff_size; i++ ) ofs->write(reinterpret_cast<char*>(&buffer[i]), sizeof(int));
 
     ofs->flush();
@@ -140,50 +173,33 @@ int writeFile(std::string path, std::vector<int> &buffer)
     return 0;
 }
 
-
-std::vector<int> readIntFile(std::string path)
-{
-    std::cout << "Reading ints..." << std::endl;
-
-    std::ifstream *ifs = new std::ifstream(path, std::ios::binary);
-
-    if (!ifs->is_open()) throw std::invalid_argument("File not found");
-
-    std::vector<int> buffer;
-
-    int code{0};
-    size_t csize = sizeof(code);
-    while (ifs->read((char*)&code, csize)) buffer.push_back(code);
-    
-    ifs->close();
-
-    delete ifs;
-
-    return buffer;
-}
-
-
-
 int readAndCompress(std::string pathIn = "", 
                     std::string pathOut = "") 
 {
     std::cout << "Read and Compress..." << std::endl;
     
-    size_t buf_size{0};
-
-    const char* buffer = readFile(pathIn, buf_size);
+    size_t file_size{0};
     
-    std::cout << "Source file size: " << buf_size << std::endl;
+    std::vector<int> dataCompressed;
 
-    std::vector<int> dataCompressed = compress(buffer, buf_size);
-
-    delete buffer;
-
+    try { dataCompressed = compress(pathIn, file_size); } 
+    catch (FileOpenError & e) { return 1; }
+    catch (EmptyFileError & e) 
+    { 
+        std::cerr << e.what() << std::endl;
+        return 3; 
+    }
+    
     int sizeCompressed = dataCompressed.size() * sizeof(int);
 
-    writeFile(pathOut, dataCompressed);
+    try { writeFile(pathOut, dataCompressed); }
+    catch (FileOpenError) { return 2; }
 
-    std::cout << "Compression ratio: " << (double)sizeCompressed / buf_size * 100 << "%" << std::endl;
+    std::cout << "File size: " << file_size * 100 << " bytes" << std::endl;
+
+    std::cout << "Compressed size: " << sizeCompressed << " bytes" << std::endl;
+
+    std::cout << "Compression ratio: " << (double)sizeCompressed / file_size * 100 << "%" << std::endl;
 
     return 0;
 }
@@ -194,20 +210,27 @@ int readAndDecompress(std::string pathIn = "",
     
     std::cout << "Read and Decompress..." << std::endl;
     
-    std::vector<int> dataCompressed = readIntFile(pathIn);
+    size_t file_size{0};
 
-    std::cout <<"Compressed data size: "<< dataCompressed.size() * sizeof(int) << std::endl;
 
-    if (dataCompressed.size() == 0) throw std::invalid_argument("Vector error");
+    std::string dataDecompressed;
 
-    std::string dataDecompressed = decompress(dataCompressed);
+    try {   dataDecompressed = decompress(pathIn, file_size); }
+    catch (FileOpenError) { return 1; }
+    catch (EmptyFileError & e) 
+    { 
+        std::cerr << e.what() << std::endl;
+        return 3; 
+    }
+
+    std::cout <<"Compressed data size: "<< file_size << std::endl;
     
     std::cout <<"Decompressed data size: "<< dataDecompressed.size() << std::endl;
     
     const char* data_ptr = dataDecompressed.c_str();
 
-    writeFile(pathOut, data_ptr, dataDecompressed.size());
-    
+    try { writeFile(pathOut, data_ptr, dataDecompressed.size()); }
+    catch (FileOpenError &e) { return 2; }
 
     return 0;
 }
@@ -216,7 +239,11 @@ int readAndDecompress(std::string pathIn = "",
 int parseargs(int argc, char **argv)
 {
 
+    const char* lzw_ext = ".lzwbin";
+
     void printHelp();
+
+    for (int i = 0; i < argc; i++) std::cout << argv[i] << '\n';
    
     if (argc < 3)
     {
@@ -233,24 +260,33 @@ int parseargs(int argc, char **argv)
     if (key_c.compare(argv[1]) == 0)
     {
         file_in = argv[2];
-        if (argc > 3)
-            file_out = argv[3];
-        else
-        {
-            file_out = file_in + ".bin";
-        }
+        
+        if (argc > 3) file_out = argv[3];
+        else file_out = file_in + lzw_ext;
+        
+        if (!file_out.ends_with(lzw_ext)) file_out = file_out + lzw_ext;
+        
         std::cout << "file_in:  "<< file_in  << "\n"
                   << "file_out: "<< file_out 
                   << std::endl << std::endl;
 
-        readAndCompress(file_in, file_out);
-        return 0;
+        std::time_t start =  time(nullptr);
+        int errCode = readAndCompress(file_in, file_out);
+        std::time_t end = time(nullptr);
+
+        if (!errCode) 
+        {
+            std::cout << "compression:\n";
+            std::cout << "time taken: " << (end - start) << " seconds" << std::endl;
+        } 
+
+        return errCode;
     }
 
     else if (key_d.compare(argv[1]) == 0)
     {
         file_in = argv[2];
-        if (!file_in.ends_with(".bin"))
+        if (!file_in.ends_with(lzw_ext))
         {
             std::cout << "Wrong file extension"<< std::endl;
             return -1;
@@ -259,14 +295,24 @@ int parseargs(int argc, char **argv)
             file_out = argv[3];
         else
         {
-            file_out = file_in.substr(0, file_in.find_last_of(".bin") - 3) + ".decompressed";
+            file_out = file_in.substr(0, file_in.find_last_of(lzw_ext) - 3) + ".decompressed";
         }
         std::cout << "file_in  : " << file_in << "\n"
                   << "file_out : " << file_out 
                   << std::endl << std::endl;
     
-        readAndDecompress(file_in, file_out);
-        return 0;
+
+        std::time_t start =  time(nullptr);
+        int errCode = readAndDecompress(file_in, file_out);
+        std::time_t end = time(nullptr);
+        
+        if (!errCode)
+        {
+            std::cout << "decompression:\n";
+            std::cout << "time taken: " << (end - start) << " seconds" << std::endl;
+        }
+
+        return errCode;
     }
     
     std::cout << "\nWrong command.\n" << std::endl;
