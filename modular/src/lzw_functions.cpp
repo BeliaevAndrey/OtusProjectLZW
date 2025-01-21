@@ -1,10 +1,4 @@
-#include <iostream>
-#include <map>
-#include <vector>
-#include <ctime>
-
 #include "lzw_functions.h"
-
 
 std::vector<int> compress(std::string &path, size_t &file_size) 
 {
