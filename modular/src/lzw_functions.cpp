@@ -110,7 +110,7 @@ int readAndCompress(std::string pathIn = "",
     try { writeFile(pathOut, dataCompressed); }
     catch (FileOpenError) { return 2; }
 
-    std::cout << "File size: " << file_size * 100 << " bytes" << std::endl;
+    std::cout << "File size: " << file_size << " bytes" << std::endl;
 
     std::cout << "Compressed size: " << sizeCompressed << " bytes" << std::endl;
 
