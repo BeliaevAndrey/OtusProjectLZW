@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.17)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 
 add_executable(
-        lzw_otus_v1_2l
+        lzw_otus_v1_22
         lzw_program.cpp
         lzw_file_work.cpp
         lzw_functions.cpp
@@ -13,4 +13,4 @@ add_executable(
         ${LOCAL_INCLUDE}/lzw_logger.h
 )
 
-target_include_directories(lzw_otus_v1_2l PUBLIC ${LOCAL_INCLUDE})
+target_include_directories(lzw_otus_v1_22 PUBLIC ${LOCAL_INCLUDE})

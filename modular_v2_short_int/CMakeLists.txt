@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.17)
-project("lzw_otus_1_2" VERSION 1.2)
+project("lzw_otus_1_21" VERSION 1.21)
 
 set(CMAKE_CXX_STANDARD 20)
 set(LOCAL_INCLUDE ${CMAKE_SOURCE_DIR}/include)
