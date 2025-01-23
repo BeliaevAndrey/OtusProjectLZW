@@ -5,8 +5,8 @@ clear
 testpath_in="../../TestData/plain"
 testpath_outC="../../TestData/compressed"
 testpath_outD="../../TestData/back"
-reportfile="report.txt"
-logfile="lzw_project_v1.log"
+reportfile="../TestResults/report.txt"
+logfile="../TestResults/lzw_project_v1.log"
 
 if [ ! -d $testpath_outC ]; then
     mkdir -p $testpath_outC;
@@ -47,18 +47,18 @@ for testfilename in $(ls $testpath_in); do
     $testpath_in/$testfilename \
     $testpath_outC/$testfilename.lzwbin &>>$logfile;
     
-    echo >> $reportfile
-    echo "==============================" >> $reportfile
-    echo >> $reportfile
+    echo >> $logfile
+    echo "==============================" >> $logfile
+    echo >> $logfile
 
     echo "Test decompressing: $testpath_outC/$testfilename"
     bin/lzw_otus_v1 -d \
     $testpath_outC/$testfilename.lzwbin \
     $testpath_outD/$testfilename &>>$logfile;
 
-    echo >> $reportfile
-    echo "==============================" >> $reportfile
-    echo >> $reportfile
+    echo >> $logfile
+    echo "==============================" >> $logfile
+    echo >> $logfile
     
     echo;
     echo >> $reportfile;
@@ -78,6 +78,6 @@ for testfilename in $(ls $testpath_in); do
             echo "wrong: cecksums are not equal." | tee -a $reportfile;
         fi
     else
-        echo "wrong: file not found." | tee -a $reportfile
+        echo "wrong: file not found." | tee -a $reportfile;
     fi
 done

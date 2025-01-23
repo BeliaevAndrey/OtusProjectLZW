@@ -8,6 +8,9 @@ file_out: ../../TestData/compressed/empty_test.txt.lzwbin
 
 Read and Compress...
 File is empty!
+
+==============================
+
 LZW compressor v 1.0
 OTUS project work.
 by Andrey Beliaev.
@@ -16,6 +19,9 @@ file_in  : ../../TestData/compressed/empty_test.txt.lzwbin
 file_out : ../../TestData/back/empty_test.txt
 
 Read and Decompress...
+
+==============================
+
 LZW compressor v 1.0
 OTUS project work.
 by Andrey Beliaev.
@@ -30,7 +36,10 @@ File size: 21956608 bytes
 Compressed size: 38133084 bytes
 Compression ratio: 173.675%
 compression:
-time taken: 48 seconds
+time taken: 49 seconds
+
+==============================
+
 LZW compressor v 1.0
 OTUS project work.
 by Andrey Beliaev.
@@ -45,6 +54,9 @@ Decompressed data size: 21956608
 Writing data...
 decompression:
 time taken: 18 seconds
+
+==============================
+
 LZW compressor v 1.0
 OTUS project work.
 by Andrey Beliaev.
@@ -59,7 +71,10 @@ File size: 8579702 bytes
 Compressed size: 4417640 bytes
 Compression ratio: 51.4894%
 compression:
-time taken: 9 seconds
+time taken: 10 seconds
+
+==============================
+
 LZW compressor v 1.0
 OTUS project work.
 by Andrey Beliaev.
@@ -74,6 +89,9 @@ Decompressed data size: 8579702
 Writing data...
 decompression:
 time taken: 2 seconds
+
+==============================
+
 LZW compressor v 1.0
 OTUS project work.
 by Andrey Beliaev.
@@ -89,6 +107,9 @@ Compressed size: 403912 bytes
 Compression ratio: 265.562%
 compression:
 time taken: 0 seconds
+
+==============================
+
 LZW compressor v 1.0
 OTUS project work.
 by Andrey Beliaev.
@@ -103,6 +124,9 @@ Decompressed data size: 152097
 Writing data...
 decompression:
 time taken: 0 seconds
+
+==============================
+
 LZW compressor v 1.0
 OTUS project work.
 by Andrey Beliaev.
@@ -118,6 +142,9 @@ Compressed size: 656 bytes
 Compression ratio: 400%
 compression:
 time taken: 0 seconds
+
+==============================
+
 LZW compressor v 1.0
 OTUS project work.
 by Andrey Beliaev.
@@ -132,6 +159,9 @@ Decompressed data size: 164
 Writing data...
 decompression:
 time taken: 0 seconds
+
+==============================
+
 LZW compressor v 1.0
 OTUS project work.
 by Andrey Beliaev.
@@ -147,6 +177,9 @@ Compressed size: 624 bytes
 Compression ratio: 400%
 compression:
 time taken: 0 seconds
+
+==============================
+
 LZW compressor v 1.0
 OTUS project work.
 by Andrey Beliaev.
@@ -161,6 +194,9 @@ Decompressed data size: 156
 Writing data...
 decompression:
 time taken: 0 seconds
+
+==============================
+
 LZW compressor v 1.0
 OTUS project work.
 by Andrey Beliaev.
@@ -176,6 +212,9 @@ Compressed size: 36 bytes
 Compression ratio: 327.273%
 compression:
 time taken: 0 seconds
+
+==============================
+
 LZW compressor v 1.0
 OTUS project work.
 by Andrey Beliaev.
@@ -190,6 +229,9 @@ Decompressed data size: 11
 Writing data...
 decompression:
 time taken: 0 seconds
+
+==============================
+
 LZW compressor v 1.0
 OTUS project work.
 by Andrey Beliaev.
@@ -205,6 +247,9 @@ Compressed size: 1860 bytes
 Compression ratio: 209.224%
 compression:
 time taken: 0 seconds
+
+==============================
+
 LZW compressor v 1.0
 OTUS project work.
 by Andrey Beliaev.
@@ -219,6 +264,9 @@ Decompressed data size: 889
 Writing data...
 decompression:
 time taken: 0 seconds
+
+==============================
+
 LZW compressor v 1.0
 OTUS project work.
 by Andrey Beliaev.
@@ -233,7 +281,10 @@ File size: 663220 bytes
 Compressed size: 89444 bytes
 Compression ratio: 13.4863%
 compression:
-time taken: 1 seconds
+time taken: 0 seconds
+
+==============================
+
 LZW compressor v 1.0
 OTUS project work.
 by Andrey Beliaev.
@@ -248,6 +299,9 @@ Decompressed data size: 663220
 Writing data...
 decompression:
 time taken: 0 seconds
+
+==============================
+
 LZW compressor v 1.0
 OTUS project work.
 by Andrey Beliaev.
@@ -263,6 +317,9 @@ Compressed size: 345716 bytes
 Compression ratio: 3.88406%
 compression:
 time taken: 6 seconds
+
+==============================
+
 LZW compressor v 1.0
 OTUS project work.
 by Andrey Beliaev.
@@ -277,6 +334,9 @@ Decompressed data size: 8900888
 Writing data...
 decompression:
 time taken: 0 seconds
+
+==============================
+
 LZW compressor v 1.0
 OTUS project work.
 by Andrey Beliaev.
@@ -291,7 +351,10 @@ File size: 2373438 bytes
 Compressed size: 3212972 bytes
 Compression ratio: 135.372%
 compression:
-time taken: 3 seconds
+time taken: 4 seconds
+
+==============================
+
 LZW compressor v 1.0
 OTUS project work.
 by Andrey Beliaev.
@@ -306,6 +369,9 @@ Decompressed data size: 2373438
 Writing data...
 decompression:
 time taken: 1 seconds
+
+==============================
+
 LZW compressor v 1.0
 OTUS project work.
 by Andrey Beliaev.
@@ -321,6 +387,9 @@ Compressed size: 403912 bytes
 Compression ratio: 265.562%
 compression:
 time taken: 0 seconds
+
+==============================
+
 LZW compressor v 1.0
 OTUS project work.
 by Andrey Beliaev.
@@ -335,6 +404,9 @@ Decompressed data size: 152097
 Writing data...
 decompression:
 time taken: 0 seconds
+
+==============================
+
 LZW compressor v 1.0
 OTUS project work.
 by Andrey Beliaev.
@@ -349,7 +421,10 @@ File size: 75683840 bytes
 Compressed size: 115900612 bytes
 Compression ratio: 153.138%
 compression:
-time taken: 178 seconds
+time taken: 183 seconds
+
+==============================
+
 LZW compressor v 1.0
 OTUS project work.
 by Andrey Beliaev.
@@ -364,3 +439,6 @@ Decompressed data size: 75683840
 Writing data...
 decompression:
 time taken: 63 seconds
+
+==============================
+

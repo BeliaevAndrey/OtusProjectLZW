@@ -5,8 +5,8 @@ clear
 testpath_in="../../TestData/plain"
 testpath_outC="../../TestData/compressed"
 testpath_outD="../../TestData/back"
-reportfile="report.txt"
-logfile="lzw_project_v1_21.log"
+reportfile="../TestResults/report.txt"
+logfile="../TestResults/lzw_project_v1_21.log"
 
 
 if [ ! -d $testpath_outC ]; then
@@ -80,6 +80,6 @@ for testfilename in $(ls $testpath_in); do
             echo "wrong: cecksums are not equal." | tee -a $reportfile;
         fi
     else
-        echo "wrong: file not found." | tee -a $reportfile
+        echo "wrong: file not found." | tee -a $reportfile;
     fi
 done
