@@ -47,12 +47,18 @@ for testfilename in $(ls $testpath_in); do
     $testpath_in/$testfilename \
     $testpath_outC/$testfilename.lzwbin &>>$logfile;
     
+    echo >> $reportfile
+    echo "==============================" >> $reportfile
+    echo >> $reportfile
+
     echo "Test decompressing: $testpath_outC/$testfilename"
     bin/lzw_otus_v1 -d \
     $testpath_outC/$testfilename.lzwbin \
     $testpath_outD/$testfilename &>>$logfile;
 
-    sleep 1;
+    echo >> $reportfile
+    echo "==============================" >> $reportfile
+    echo >> $reportfile
     
     echo;
     echo >> $reportfile;
