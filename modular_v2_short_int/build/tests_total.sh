@@ -29,7 +29,10 @@ echo "clearing paths..."
 rm $testpath_outC/*
 rm $testpath_outD/*
 
+echo "clearing logs..."
+echo > $logfile
 date > $reportfile
+
 echo "File list" >> $reportfile
 echo "==============================" >> $reportfile
 
@@ -46,12 +49,18 @@ for testfilename in $(ls $testpath_in); do
     $testpath_in/$testfilename \
     $testpath_outC/$testfilename.lzwbin &>>$logfile;
     
+    echo >> $logfile;
+    echo "=============================">> $logfile;
+    echo >> $logfile;
+
     echo "Test decompressing: $testpath_outC/$testfilename"
     bin/lzw_otus_v1_21 -d \
     $testpath_outC/$testfilename.lzwbin \
     $testpath_outD/$testfilename &>>$logfile;
 
-    sleep 1;
+    echo >> $logfile;
+    echo "=============================">> $logfile;
+    echo >> $logfile;
     
     echo;
     echo >> $reportfile;
