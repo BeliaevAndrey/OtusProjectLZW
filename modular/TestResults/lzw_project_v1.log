@@ -36,7 +36,7 @@ File size: 21956608 bytes
 Compressed size: 38133084 bytes
 Compression ratio: 173.675%
 compression:
-time taken: 49 seconds
+time taken: 46 seconds
 
 ==============================
 
@@ -71,7 +71,7 @@ File size: 8579702 bytes
 Compressed size: 4417640 bytes
 Compression ratio: 51.4894%
 compression:
-time taken: 10 seconds
+time taken: 9 seconds
 
 ==============================
 
@@ -351,7 +351,7 @@ File size: 2373438 bytes
 Compressed size: 3212972 bytes
 Compression ratio: 135.372%
 compression:
-time taken: 4 seconds
+time taken: 3 seconds
 
 ==============================
 
@@ -368,7 +368,7 @@ Compressed data size: 3212972
 Decompressed data size: 2373438
 Writing data...
 decompression:
-time taken: 1 seconds
+time taken: 2 seconds
 
 ==============================
 
@@ -421,7 +421,7 @@ File size: 75683840 bytes
 Compressed size: 115900612 bytes
 Compression ratio: 153.138%
 compression:
-time taken: 183 seconds
+time taken: 176 seconds
 
 ==============================
 
@@ -438,7 +438,7 @@ Compressed data size: 115900612
 Decompressed data size: 75683840
 Writing data...
 decompression:
-time taken: 63 seconds
+time taken: 59 seconds
 
 ==============================
 
