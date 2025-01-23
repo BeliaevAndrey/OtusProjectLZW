@@ -4,7 +4,6 @@ std::ifstream get_ifstream(std::string &path, size_t &file_size)
 {
     std::ifstream ifs(path, std::ios::binary | std::ios::ate);
     if (!ifs.is_open()) throw FileOpenError(1);
-    
 
     file_size = ifs.tellg();
     
@@ -18,7 +17,6 @@ std::ifstream get_ifstream(std::string &path, size_t &file_size)
 int writeFile(std::string path, const char *buffer, size_t buff_size)
 {
     logit->message("Writing data...");
-    logit->message(path);
     
     std::ofstream *ofs = new std::ofstream(path, std::ios::binary);
     
@@ -45,7 +43,7 @@ int writeFile(std::string path, const char *buffer, size_t buff_size)
 int writeFile(std::string path, std::vector<u_short> &buffer)
 {
     logit->message("Writing ints...");
-    logit->message(path);
+    
     std::ofstream *ofs = new std::ofstream(path, std::ios::binary);
     if (!ofs->is_open()) 
     {

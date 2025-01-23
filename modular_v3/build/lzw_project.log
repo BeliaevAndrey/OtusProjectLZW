@@ -1,0 +1,112 @@
+INFO (Compress-logger): 2025-01-23 21:51:57 -- File in: ../../TestData/plain/empty_test.txt; File out: ../../TestData/compressed/empty_test.txt.lzwbin
+ERROR: (Compress-logger): 2025-01-23 21:51:57 -- File is empty!
+INFO (Decompress-logger): 2025-01-23 21:51:57 -- File in: ../../TestData/compressed/empty_test.txt.lzwbin; File out: ../../TestData/back/empty_test.txt
+ERROR: (Decompress-logger): 2025-01-23 21:51:57 -- Error while opening input file
+INFO (Compress-logger): 2025-01-23 21:51:58 -- File in: ../../TestData/plain/MongoJerry.avi; File out: ../../TestData/compressed/MongoJerry.avi.lzwbin
+INFO (Compress-logger): 2025-01-23 21:52:08 -- File size: 21956608 bytes
+INFO (Compress-logger): 2025-01-23 21:52:08 -- Compressed size: 31151242 bytes
+INFO (Compress-logger): 2025-01-23 21:52:08 -- Compression ratio: 141.876386 %
+INFO (Compress-logger): 2025-01-23 21:52:08 -- Compression time: 10 seconds
+INFO (Decompress-logger): 2025-01-23 21:52:08 -- File in: ../../TestData/compressed/MongoJerry.avi.lzwbin; File out: ../../TestData/back/MongoJerry.avi
+INFO (Decompress-logger): 2025-01-23 21:52:16 -- Compressed data size: 31151242 bytes
+INFO (Decompress-logger): 2025-01-23 21:52:16 -- Decompressed data size: 21956608 bytes
+INFO (Decompress-logger): 2025-01-23 21:52:16 -- Decompression time: 8 seconds
+INFO (Compress-logger): 2025-01-23 21:52:17 -- File in: ../../TestData/plain/mueller_utf8-cl.txt; File out: ../../TestData/compressed/mueller_utf8-cl.txt.lzwbin
+INFO (Compress-logger): 2025-01-23 21:52:19 -- File size: 8579702 bytes
+INFO (Compress-logger): 2025-01-23 21:52:19 -- Compressed size: 3304860 bytes
+INFO (Compress-logger): 2025-01-23 21:52:19 -- Compression ratio: 38.519520 %
+INFO (Compress-logger): 2025-01-23 21:52:19 -- Compression time: 2 seconds
+INFO (Decompress-logger): 2025-01-23 21:52:19 -- File in: ../../TestData/compressed/mueller_utf8-cl.txt.lzwbin; File out: ../../TestData/back/mueller_utf8-cl.txt
+INFO (Decompress-logger): 2025-01-23 21:52:20 -- Compressed data size: 3304860 bytes
+INFO (Decompress-logger): 2025-01-23 21:52:20 -- Decompressed data size: 8579702 bytes
+INFO (Decompress-logger): 2025-01-23 21:52:20 -- Decompression time: 1 seconds
+INFO (Compress-logger): 2025-01-23 21:52:21 -- File in: ../../TestData/plain/pic.jpg; File out: ../../TestData/compressed/pic.jpg.lzwbin
+INFO (Compress-logger): 2025-01-23 21:52:21 -- File size: 152097 bytes
+INFO (Compress-logger): 2025-01-23 21:52:21 -- Compressed size: 224506 bytes
+INFO (Compress-logger): 2025-01-23 21:52:21 -- Compression ratio: 147.607119 %
+INFO (Compress-logger): 2025-01-23 21:52:21 -- Compression time: 0 seconds
+INFO (Decompress-logger): 2025-01-23 21:52:21 -- File in: ../../TestData/compressed/pic.jpg.lzwbin; File out: ../../TestData/back/pic.jpg
+INFO (Decompress-logger): 2025-01-23 21:52:21 -- Compressed data size: 224506 bytes
+INFO (Decompress-logger): 2025-01-23 21:52:21 -- Decompressed data size: 152097 bytes
+INFO (Decompress-logger): 2025-01-23 21:52:21 -- Decompression time: 0 seconds
+INFO (Compress-logger): 2025-01-23 21:52:22 -- File in: ../../TestData/plain/test0.txt; File out: ../../TestData/compressed/test0.txt.lzwbin
+INFO (Compress-logger): 2025-01-23 21:52:22 -- File size: 164 bytes
+INFO (Compress-logger): 2025-01-23 21:52:22 -- Compressed size: 328 bytes
+INFO (Compress-logger): 2025-01-23 21:52:22 -- Compression ratio: 200.000000 %
+INFO (Compress-logger): 2025-01-23 21:52:22 -- Compression time: 0 seconds
+INFO (Decompress-logger): 2025-01-23 21:52:22 -- File in: ../../TestData/compressed/test0.txt.lzwbin; File out: ../../TestData/back/test0.txt
+INFO (Decompress-logger): 2025-01-23 21:52:22 -- Compressed data size: 328 bytes
+INFO (Decompress-logger): 2025-01-23 21:52:22 -- Decompressed data size: 164 bytes
+INFO (Decompress-logger): 2025-01-23 21:52:22 -- Decompression time: 0 seconds
+INFO (Compress-logger): 2025-01-23 21:52:24 -- File in: ../../TestData/plain/test0.txt.bckp; File out: ../../TestData/compressed/test0.txt.bckp.lzwbin
+INFO (Compress-logger): 2025-01-23 21:52:24 -- File size: 156 bytes
+INFO (Compress-logger): 2025-01-23 21:52:24 -- Compressed size: 312 bytes
+INFO (Compress-logger): 2025-01-23 21:52:24 -- Compression ratio: 200.000000 %
+INFO (Compress-logger): 2025-01-23 21:52:24 -- Compression time: 0 seconds
+INFO (Decompress-logger): 2025-01-23 21:52:24 -- File in: ../../TestData/compressed/test0.txt.bckp.lzwbin; File out: ../../TestData/back/test0.txt.bckp
+INFO (Decompress-logger): 2025-01-23 21:52:24 -- Compressed data size: 312 bytes
+INFO (Decompress-logger): 2025-01-23 21:52:24 -- Decompressed data size: 156 bytes
+INFO (Decompress-logger): 2025-01-23 21:52:24 -- Decompression time: 0 seconds
+INFO (Compress-logger): 2025-01-23 21:52:25 -- File in: ../../TestData/plain/test1.txt; File out: ../../TestData/compressed/test1.txt.lzwbin
+INFO (Compress-logger): 2025-01-23 21:52:25 -- File size: 11 bytes
+INFO (Compress-logger): 2025-01-23 21:52:25 -- Compressed size: 18 bytes
+INFO (Compress-logger): 2025-01-23 21:52:25 -- Compression ratio: 163.636364 %
+INFO (Compress-logger): 2025-01-23 21:52:25 -- Compression time: 0 seconds
+INFO (Decompress-logger): 2025-01-23 21:52:25 -- File in: ../../TestData/compressed/test1.txt.lzwbin; File out: ../../TestData/back/test1.txt
+INFO (Decompress-logger): 2025-01-23 21:52:25 -- Compressed data size: 18 bytes
+INFO (Decompress-logger): 2025-01-23 21:52:25 -- Decompressed data size: 11 bytes
+INFO (Decompress-logger): 2025-01-23 21:52:25 -- Decompression time: 0 seconds
+INFO (Compress-logger): 2025-01-23 21:52:26 -- File in: ../../TestData/plain/test2.txt; File out: ../../TestData/compressed/test2.txt.lzwbin
+INFO (Compress-logger): 2025-01-23 21:52:26 -- File size: 889 bytes
+INFO (Compress-logger): 2025-01-23 21:52:26 -- Compressed size: 930 bytes
+INFO (Compress-logger): 2025-01-23 21:52:26 -- Compression ratio: 104.611924 %
+INFO (Compress-logger): 2025-01-23 21:52:26 -- Compression time: 0 seconds
+INFO (Decompress-logger): 2025-01-23 21:52:26 -- File in: ../../TestData/compressed/test2.txt.lzwbin; File out: ../../TestData/back/test2.txt
+INFO (Decompress-logger): 2025-01-23 21:52:26 -- Compressed data size: 930 bytes
+INFO (Decompress-logger): 2025-01-23 21:52:26 -- Decompressed data size: 889 bytes
+INFO (Decompress-logger): 2025-01-23 21:52:26 -- Decompression time: 0 seconds
+INFO (Compress-logger): 2025-01-23 21:52:27 -- File in: ../../TestData/plain/test3.txt; File out: ../../TestData/compressed/test3.txt.lzwbin
+INFO (Compress-logger): 2025-01-23 21:52:27 -- File size: 663220 bytes
+INFO (Compress-logger): 2025-01-23 21:52:27 -- Compressed size: 44722 bytes
+INFO (Compress-logger): 2025-01-23 21:52:27 -- Compression ratio: 6.743162 %
+INFO (Compress-logger): 2025-01-23 21:52:27 -- Compression time: 0 seconds
+INFO (Decompress-logger): 2025-01-23 21:52:27 -- File in: ../../TestData/compressed/test3.txt.lzwbin; File out: ../../TestData/back/test3.txt
+INFO (Decompress-logger): 2025-01-23 21:52:27 -- Compressed data size: 44722 bytes
+INFO (Decompress-logger): 2025-01-23 21:52:27 -- Decompressed data size: 663220 bytes
+INFO (Decompress-logger): 2025-01-23 21:52:27 -- Decompression time: 0 seconds
+INFO (Compress-logger): 2025-01-23 21:52:28 -- File in: ../../TestData/plain/test4.txt; File out: ../../TestData/compressed/test4.txt.lzwbin
+INFO (Compress-logger): 2025-01-23 21:52:31 -- File size: 8900888 bytes
+INFO (Compress-logger): 2025-01-23 21:52:31 -- Compressed size: 234444 bytes
+INFO (Compress-logger): 2025-01-23 21:52:31 -- Compression ratio: 2.633939 %
+INFO (Compress-logger): 2025-01-23 21:52:31 -- Compression time: 3 seconds
+INFO (Decompress-logger): 2025-01-23 21:52:31 -- File in: ../../TestData/compressed/test4.txt.lzwbin; File out: ../../TestData/back/test4.txt
+INFO (Decompress-logger): 2025-01-23 21:52:31 -- Compressed data size: 234444 bytes
+INFO (Decompress-logger): 2025-01-23 21:52:31 -- Decompressed data size: 8900888 bytes
+INFO (Decompress-logger): 2025-01-23 21:52:31 -- Decompression time: 0 seconds
+INFO (Compress-logger): 2025-01-23 21:52:32 -- File in: ../../TestData/plain/test_picture.bmp; File out: ../../TestData/compressed/test_picture.bmp.lzwbin
+INFO (Compress-logger): 2025-01-23 21:52:33 -- File size: 2373438 bytes
+INFO (Compress-logger): 2025-01-23 21:52:33 -- Compressed size: 2150306 bytes
+INFO (Compress-logger): 2025-01-23 21:52:33 -- Compression ratio: 90.598785 %
+INFO (Compress-logger): 2025-01-23 21:52:33 -- Compression time: 1 seconds
+INFO (Decompress-logger): 2025-01-23 21:52:33 -- File in: ../../TestData/compressed/test_picture.bmp.lzwbin; File out: ../../TestData/back/test_picture.bmp
+INFO (Decompress-logger): 2025-01-23 21:52:33 -- Compressed data size: 2150306 bytes
+INFO (Decompress-logger): 2025-01-23 21:52:33 -- Decompressed data size: 2373438 bytes
+INFO (Decompress-logger): 2025-01-23 21:52:33 -- Decompression time: 0 seconds
+INFO (Compress-logger): 2025-01-23 21:52:34 -- File in: ../../TestData/plain/test_picture.jpg; File out: ../../TestData/compressed/test_picture.jpg.lzwbin
+INFO (Compress-logger): 2025-01-23 21:52:35 -- File size: 152097 bytes
+INFO (Compress-logger): 2025-01-23 21:52:35 -- Compressed size: 224506 bytes
+INFO (Compress-logger): 2025-01-23 21:52:35 -- Compression ratio: 147.607119 %
+INFO (Compress-logger): 2025-01-23 21:52:35 -- Compression time: 1 seconds
+INFO (Decompress-logger): 2025-01-23 21:52:35 -- File in: ../../TestData/compressed/test_picture.jpg.lzwbin; File out: ../../TestData/back/test_picture.jpg
+INFO (Decompress-logger): 2025-01-23 21:52:35 -- Compressed data size: 224506 bytes
+INFO (Decompress-logger): 2025-01-23 21:52:35 -- Decompressed data size: 152097 bytes
+INFO (Decompress-logger): 2025-01-23 21:52:35 -- Decompression time: 0 seconds
+INFO (Compress-logger): 2025-01-23 21:52:36 -- File in: ../../TestData/plain/The_Cathedral.avi; File out: ../../TestData/compressed/The_Cathedral.avi.lzwbin
+INFO (Compress-logger): 2025-01-23 21:53:09 -- File size: 75683840 bytes
+INFO (Compress-logger): 2025-01-23 21:53:09 -- Compressed size: 106511378 bytes
+INFO (Compress-logger): 2025-01-23 21:53:09 -- Compression ratio: 140.731995 %
+INFO (Compress-logger): 2025-01-23 21:53:09 -- Compression time: 33 seconds
+INFO (Decompress-logger): 2025-01-23 21:53:09 -- File in: ../../TestData/compressed/The_Cathedral.avi.lzwbin; File out: ../../TestData/back/The_Cathedral.avi
+INFO (Decompress-logger): 2025-01-23 21:53:34 -- Compressed data size: 106511378 bytes
+INFO (Decompress-logger): 2025-01-23 21:53:34 -- Decompressed data size: 75683840 bytes
+INFO (Decompress-logger): 2025-01-23 21:53:35 -- Decompression time: 26 seconds

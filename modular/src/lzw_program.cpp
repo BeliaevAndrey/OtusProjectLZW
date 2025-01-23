@@ -6,10 +6,6 @@ int parseargs(int argc, char **argv)
 
     const char* lzw_ext = ".lzwbin";
 
-    void printHelp();
-
-    for (int i = 0; i < argc; i++) std::cout << argv[i] << '\n';
-   
     if (argc < 3)
     {
         printHelp();
@@ -89,7 +85,9 @@ int parseargs(int argc, char **argv)
 
 int main(int argc, char** argv)
 {
-    
+    std::cout << "LZW compressor v 1.0\n"
+              << "OTUS project work.\n" 
+              << "by Andrey Beliaev.\n" << std::endl;
     if (argc > 1) return parseargs(argc, argv);
     else printHelp();
     return 0;

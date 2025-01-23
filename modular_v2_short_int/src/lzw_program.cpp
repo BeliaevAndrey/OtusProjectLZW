@@ -89,7 +89,11 @@ int parseargs(int argc, char **argv)
 
 int main(int argc, char** argv)
 {
-    
+    std::cout << "LZW compressor v 1.22\n"
+              << "OTUS project work.\n" 
+              << "by Andrey Beliaev.\n" 
+              << std::endl;
+
     if (argc > 1) return parseargs(argc, argv);
     else printHelp();
     return 0;
