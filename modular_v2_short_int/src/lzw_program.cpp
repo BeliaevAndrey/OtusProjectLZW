@@ -6,10 +6,6 @@ int parseargs(int argc, char **argv)
 
     const char* lzw_ext = ".lzwbin";
 
-    void printHelp();
-
-    for (int i = 0; i < argc; i++) std::cout << argv[i] << '\n';
-   
     if (argc < 3)
     {
         printHelp();

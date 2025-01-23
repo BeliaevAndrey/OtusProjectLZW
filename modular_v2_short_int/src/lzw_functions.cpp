@@ -8,7 +8,6 @@ const u_short LIMIT{(u_short)65535};
 
 void resetDict(std::map<std::string, u_short> &dict, u_short &currCode)
 {
-    std::cout << "Resetting ditionary..." << std::endl;
     dict.clear();
     currCode = INITIAL_SIZE;
     for (u_short i = 0; i < currCode; i++) dict[std::string(1, i)] = i;
@@ -59,7 +58,6 @@ std::vector<u_short> compress(std::string &path, size_t &file_size)
 
 void resetDict(std::map<u_short, std::string> &dict, u_short &currCode)
 {
-    std::cout << "Resetting ditionary..." << std::endl;
     currCode = INITIAL_SIZE;
     dict.clear();
     for(u_short i = 0; i < currCode; i++) dict[i] = std::string(1, i);
