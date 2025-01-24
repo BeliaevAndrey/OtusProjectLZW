@@ -9,7 +9,7 @@ file_out: ../../TestData/compressed/empty_test.txt.lzwbin
 Read and Compress...
 File is empty!
 
-=============================
+==============================
 
 LZW compressor v 1.22
 OTUS project work.
@@ -20,7 +20,7 @@ file_out : ../../TestData/back/empty_test.txt
 
 Read and Decompress...
 
-=============================
+==============================
 
 LZW compressor v 1.22
 OTUS project work.
@@ -36,9 +36,9 @@ File size: 21956608 bytes
 Compressed size: 31151242 bytes
 Compression ratio: 141.876%
 compression:
-time taken: 32 seconds
+time taken: 30 seconds
 
-=============================
+==============================
 
 LZW compressor v 1.22
 OTUS project work.
@@ -53,9 +53,9 @@ Compressed data size: 31151242
 Decompressed data size: 21956608
 Writing data...
 decompression:
-time taken: 17 seconds
+time taken: 16 seconds
 
-=============================
+==============================
 
 LZW compressor v 1.22
 OTUS project work.
@@ -71,9 +71,9 @@ File size: 8579702 bytes
 Compressed size: 3304860 bytes
 Compression ratio: 38.5195%
 compression:
-time taken: 7 seconds
+time taken: 6 seconds
 
-=============================
+==============================
 
 LZW compressor v 1.22
 OTUS project work.
@@ -90,7 +90,7 @@ Writing data...
 decompression:
 time taken: 2 seconds
 
-=============================
+==============================
 
 LZW compressor v 1.22
 OTUS project work.
@@ -106,9 +106,9 @@ File size: 152097 bytes
 Compressed size: 224506 bytes
 Compression ratio: 147.607%
 compression:
-time taken: 0 seconds
+time taken: 1 seconds
 
-=============================
+==============================
 
 LZW compressor v 1.22
 OTUS project work.
@@ -123,9 +123,9 @@ Compressed data size: 224506
 Decompressed data size: 152097
 Writing data...
 decompression:
-time taken: 1 seconds
+time taken: 0 seconds
 
-=============================
+==============================
 
 LZW compressor v 1.22
 OTUS project work.
@@ -143,7 +143,7 @@ Compression ratio: 200%
 compression:
 time taken: 0 seconds
 
-=============================
+==============================
 
 LZW compressor v 1.22
 OTUS project work.
@@ -160,7 +160,7 @@ Writing data...
 decompression:
 time taken: 0 seconds
 
-=============================
+==============================
 
 LZW compressor v 1.22
 OTUS project work.
@@ -178,7 +178,7 @@ Compression ratio: 200%
 compression:
 time taken: 0 seconds
 
-=============================
+==============================
 
 LZW compressor v 1.22
 OTUS project work.
@@ -195,7 +195,7 @@ Writing data...
 decompression:
 time taken: 0 seconds
 
-=============================
+==============================
 
 LZW compressor v 1.22
 OTUS project work.
@@ -213,7 +213,7 @@ Compression ratio: 163.636%
 compression:
 time taken: 0 seconds
 
-=============================
+==============================
 
 LZW compressor v 1.22
 OTUS project work.
@@ -230,7 +230,7 @@ Writing data...
 decompression:
 time taken: 0 seconds
 
-=============================
+==============================
 
 LZW compressor v 1.22
 OTUS project work.
@@ -248,7 +248,7 @@ Compression ratio: 104.612%
 compression:
 time taken: 0 seconds
 
-=============================
+==============================
 
 LZW compressor v 1.22
 OTUS project work.
@@ -265,7 +265,7 @@ Writing data...
 decompression:
 time taken: 0 seconds
 
-=============================
+==============================
 
 LZW compressor v 1.22
 OTUS project work.
@@ -283,7 +283,7 @@ Compression ratio: 6.74316%
 compression:
 time taken: 0 seconds
 
-=============================
+==============================
 
 LZW compressor v 1.22
 OTUS project work.
@@ -300,7 +300,7 @@ Writing data...
 decompression:
 time taken: 0 seconds
 
-=============================
+==============================
 
 LZW compressor v 1.22
 OTUS project work.
@@ -318,7 +318,7 @@ Compression ratio: 2.63394%
 compression:
 time taken: 6 seconds
 
-=============================
+==============================
 
 LZW compressor v 1.22
 OTUS project work.
@@ -335,14 +335,14 @@ Writing data...
 decompression:
 time taken: 0 seconds
 
-=============================
+==============================
 
 LZW compressor v 1.22
 OTUS project work.
 by Andrey Beliaev.
 
-file_in:  ../../TestData/plain/test_picture.bmp
-file_out: ../../TestData/compressed/test_picture.bmp.lzwbin
+file_in:  ../../TestData/plain/test_picture_bmp.bmp
+file_out: ../../TestData/compressed/test_picture_bmp.bmp.lzwbin
 
 Read and Compress...
 Compressing...
@@ -351,16 +351,16 @@ File size: 2373438 bytes
 Compressed size: 2150306 bytes
 Compression ratio: 90.5988%
 compression:
-time taken: 3 seconds
+time taken: 2 seconds
 
-=============================
+==============================
 
 LZW compressor v 1.22
 OTUS project work.
 by Andrey Beliaev.
 
-file_in  : ../../TestData/compressed/test_picture.bmp.lzwbin
-file_out : ../../TestData/back/test_picture.bmp
+file_in  : ../../TestData/compressed/test_picture_bmp.bmp.lzwbin
+file_out : ../../TestData/back/test_picture_bmp.bmp
 
 Read and Decompress...
 Decompressing...
@@ -368,9 +368,9 @@ Compressed data size: 2150306
 Decompressed data size: 2373438
 Writing data...
 decompression:
-time taken: 1 seconds
+time taken: 2 seconds
 
-=============================
+==============================
 
 LZW compressor v 1.22
 OTUS project work.
@@ -388,7 +388,7 @@ Compression ratio: 147.607%
 compression:
 time taken: 0 seconds
 
-=============================
+==============================
 
 LZW compressor v 1.22
 OTUS project work.
@@ -405,7 +405,7 @@ Writing data...
 decompression:
 time taken: 0 seconds
 
-=============================
+==============================
 
 LZW compressor v 1.22
 OTUS project work.
@@ -421,9 +421,9 @@ File size: 75683840 bytes
 Compressed size: 106511378 bytes
 Compression ratio: 140.732%
 compression:
-time taken: 110 seconds
+time taken: 105 seconds
 
-=============================
+==============================
 
 LZW compressor v 1.22
 OTUS project work.
@@ -438,7 +438,7 @@ Compressed data size: 106511378
 Decompressed data size: 75683840
 Writing data...
 decompression:
-time taken: 56 seconds
+time taken: 55 seconds
 
-=============================
+==============================
 

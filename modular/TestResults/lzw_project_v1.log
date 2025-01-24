@@ -36,7 +36,7 @@ File size: 21956608 bytes
 Compressed size: 38133084 bytes
 Compression ratio: 173.675%
 compression:
-time taken: 46 seconds
+time taken: 47 seconds
 
 ==============================
 
@@ -53,7 +53,7 @@ Compressed data size: 38133084
 Decompressed data size: 21956608
 Writing data...
 decompression:
-time taken: 18 seconds
+time taken: 17 seconds
 
 ==============================
 
@@ -106,7 +106,7 @@ File size: 152097 bytes
 Compressed size: 403912 bytes
 Compression ratio: 265.562%
 compression:
-time taken: 0 seconds
+time taken: 1 seconds
 
 ==============================
 
@@ -341,8 +341,8 @@ LZW compressor v 1.0
 OTUS project work.
 by Andrey Beliaev.
 
-file_in:  ../../TestData/plain/test_picture.bmp
-file_out: ../../TestData/compressed/test_picture.bmp.lzwbin
+file_in:  ../../TestData/plain/test_picture_bmp.bmp
+file_out: ../../TestData/compressed/test_picture_bmp.bmp.lzwbin
 
 Read and Compress...
 Compressing...
@@ -359,8 +359,8 @@ LZW compressor v 1.0
 OTUS project work.
 by Andrey Beliaev.
 
-file_in  : ../../TestData/compressed/test_picture.bmp.lzwbin
-file_out : ../../TestData/back/test_picture.bmp
+file_in  : ../../TestData/compressed/test_picture_bmp.bmp.lzwbin
+file_out : ../../TestData/back/test_picture_bmp.bmp
 
 Read and Decompress...
 Decompressing...
@@ -368,7 +368,7 @@ Compressed data size: 3212972
 Decompressed data size: 2373438
 Writing data...
 decompression:
-time taken: 2 seconds
+time taken: 1 seconds
 
 ==============================
 
@@ -386,7 +386,7 @@ File size: 152097 bytes
 Compressed size: 403912 bytes
 Compression ratio: 265.562%
 compression:
-time taken: 0 seconds
+time taken: 1 seconds
 
 ==============================
 
@@ -421,7 +421,7 @@ File size: 75683840 bytes
 Compressed size: 115900612 bytes
 Compression ratio: 153.138%
 compression:
-time taken: 176 seconds
+time taken: 173 seconds
 
 ==============================
 
@@ -438,7 +438,7 @@ Compressed data size: 115900612
 Decompressed data size: 75683840
 Writing data...
 decompression:
-time taken: 59 seconds
+time taken: 61 seconds
 
 ==============================
 

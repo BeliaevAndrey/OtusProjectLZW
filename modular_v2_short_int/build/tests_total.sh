@@ -50,7 +50,7 @@ for testfilename in $(ls $testpath_in); do
     $testpath_outC/$testfilename.lzwbin &>>$logfile;
     
     echo >> $logfile;
-    echo "=============================">> $logfile;
+    echo "==============================" >> $logfile;
     echo >> $logfile;
 
     echo "Test decompressing: $testpath_outC/$testfilename"
@@ -59,7 +59,7 @@ for testfilename in $(ls $testpath_in); do
     $testpath_outD/$testfilename &>>$logfile;
 
     echo >> $logfile;
-    echo "=============================">> $logfile;
+    echo "==============================">> $logfile;
     echo >> $logfile;
     
     echo;

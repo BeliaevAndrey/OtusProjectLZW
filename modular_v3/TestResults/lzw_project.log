@@ -1,7 +1,3 @@
-INFO (Compress-logger): 2025-01-23 21:51:57 -- File in: ../../TestData/plain/empty_test.txt; File out: ../../TestData/compressed/empty_test.txt.lzwbin
-ERROR: (Compress-logger): 2025-01-23 21:51:57 -- File is empty!
-INFO (Decompress-logger): 2025-01-23 21:51:57 -- File in: ../../TestData/compressed/empty_test.txt.lzwbin; File out: ../../TestData/back/empty_test.txt
-ERROR: (Decompress-logger): 2025-01-23 21:51:57 -- Error while opening input file
 INFO (Compress-logger): 2025-01-23 21:51:58 -- File in: ../../TestData/plain/MongoJerry.avi; File out: ../../TestData/compressed/MongoJerry.avi.lzwbin
 INFO (Compress-logger): 2025-01-23 21:52:08 -- File size: 21956608 bytes
 INFO (Compress-logger): 2025-01-23 21:52:08 -- Compressed size: 31151242 bytes
