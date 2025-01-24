@@ -15,10 +15,10 @@
 Usage:
     lzw -[c|d] file-in file-out
     Commands:
-    -c\t\tcompress
-    -d\t\tdecompress\n
-    file-in \tinput path/to/file/filename
-    file-out\toutput path/to/file/filename
+    -c        -- compress
+    -d        -- decompress
+    file-in   -- input path/to/file/filename
+    file-out  -- output path/to/file/filename
     compressed file extension (strictly): '.lzwbin'
     *lzw -- executable filename
 ```
