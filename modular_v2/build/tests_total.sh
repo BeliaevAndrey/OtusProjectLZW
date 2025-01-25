@@ -19,11 +19,10 @@ fi
 
 echo "Tests starter"
 echo "Files for tests are in $testpath_in"
-echo "Compressed files will be in $testpath_outC"
-echo "Decompressed files will be in $testpath_outD"
-echo "The /bin/sha256sum utility is used to compute chekcsums"
+echo "Compressed files will appear in $testpath_outC"
+echo "Decompressed files will appear in $testpath_outD"
+echo "The /bin/sha256sum utility is used to compute checksums"
 echo
-
 
 echo "clearing paths..."
 rm $testpath_outC/*
