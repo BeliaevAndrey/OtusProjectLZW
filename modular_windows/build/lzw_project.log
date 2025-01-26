@@ -1,0 +1,14 @@
+INFO (Compress-logger): 2025-01-26 21:19:39 -- File in: ..\..\TestData\plain\mueller_utf8-cl.txt; File out: ..\..\TestData\mueller_utf8-cl.txt.lzwbin
+INFO (Compress-logger): 2025-01-26 21:19:42 -- File size: 8625623 bytes
+INFO (Compress-logger): 2025-01-26 21:19:42 -- Compressed size: 3312022 bytes
+INFO (Compress-logger): 2025-01-26 21:19:42 -- Compression ratio: 38.397482 %
+INFO (Compress-logger): 2025-01-26 21:19:42 -- Compression time: 3 seconds
+ERROR: (Decompress-logger): 2025-01-26 21:21:55 -- Wrong file extension
+INFO (Decompress-logger): 2025-01-26 21:22:08 -- File in: ..\..\TestData\comp\mueller_utf8-cl.txt.lzwbin; File out: ..\..\TestData\back\
+INFO (Decompress-logger): 2025-01-26 21:22:09 -- Compressed data size: 3312022 bytes
+INFO (Decompress-logger): 2025-01-26 21:22:09 -- Decompressed data size: 8625623 bytes
+ERROR: (Decompress-logger): 2025-01-26 21:22:09 -- Error while opening output file
+INFO (Decompress-logger): 2025-01-26 21:23:47 -- File in: ..\..\TestData\comp\mueller_utf8-cl.txt.lzwbin; File out: ..\..\TestData\back\mueller.txt
+INFO (Decompress-logger): 2025-01-26 21:23:48 -- Compressed data size: 3312022 bytes
+INFO (Decompress-logger): 2025-01-26 21:23:48 -- Decompressed data size: 8625623 bytes
+INFO (Decompress-logger): 2025-01-26 21:23:48 -- Decompression time: 1 seconds
