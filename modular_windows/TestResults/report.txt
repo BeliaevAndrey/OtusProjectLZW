@@ -1,0 +1,119 @@
+Чт 23 янв 2025 21:51:57 MSK
+File list
+==============================
+../../TestData/plain/empty_test.txt
+../../TestData/plain/MongoJerry.avi
+../../TestData/plain/mueller_utf8-cl.txt
+../../TestData/plain/pic.jpg
+../../TestData/plain/test0.txt
+../../TestData/plain/test0.txt.bckp
+../../TestData/plain/test1.txt
+../../TestData/plain/test2.txt
+../../TestData/plain/test3.txt
+../../TestData/plain/test4.txt
+../../TestData/plain/test_picture.bmp
+../../TestData/plain/test_picture.jpg
+../../TestData/plain/The_Cathedral.avi
+==============================
+
+
+Чт 23 янв 2025 21:51:58 MSK
+empty_test.txt
+counting crc...
+wrong: file not found.
+
+Чт 23 янв 2025 21:52:17 MSK
+MongoJerry.avi
+counting crc...
+source: edc9feb8fb4e1ea1be6c38a78e59c6ede902b6243df91c0860c4bfe89017b9aa
+result: edc9feb8fb4e1ea1be6c38a78e59c6ede902b6243df91c0860c4bfe89017b9aa
+compare...
+correct
+
+Чт 23 янв 2025 21:52:21 MSK
+mueller_utf8-cl.txt
+counting crc...
+source: 24ba6d30a15b2e9524459c283c9805a82a5595845e3a6a39c493692978f5eb96
+result: 24ba6d30a15b2e9524459c283c9805a82a5595845e3a6a39c493692978f5eb96
+compare...
+correct
+
+Чт 23 янв 2025 21:52:22 MSK
+pic.jpg
+counting crc...
+source: 2e9b5302c9dabf93148e3aa1a456d4b2d42c741a0db353be96cd21631b9fc01d
+result: 2e9b5302c9dabf93148e3aa1a456d4b2d42c741a0db353be96cd21631b9fc01d
+compare...
+correct
+
+Чт 23 янв 2025 21:52:24 MSK
+test0.txt
+counting crc...
+source: 41ecd59f2e3a19967d89236e377e581bfc3e94226b49b3f6baf92b7e331831da
+result: 41ecd59f2e3a19967d89236e377e581bfc3e94226b49b3f6baf92b7e331831da
+compare...
+correct
+
+Чт 23 янв 2025 21:52:25 MSK
+test0.txt.bckp
+counting crc...
+source: ebe8d7e95f909bb4e0d878b3d9ff4cfc44e7d4f224821ad308aa759521251b24
+result: ebe8d7e95f909bb4e0d878b3d9ff4cfc44e7d4f224821ad308aa759521251b24
+compare...
+correct
+
+Чт 23 янв 2025 21:52:26 MSK
+test1.txt
+counting crc...
+source: 26dfd8161b4975a5b1a2c0d85b8ca408c6a15758084a65e312bfb116cde519bc
+result: 26dfd8161b4975a5b1a2c0d85b8ca408c6a15758084a65e312bfb116cde519bc
+compare...
+correct
+
+Чт 23 янв 2025 21:52:27 MSK
+test2.txt
+counting crc...
+source: f0924cc9d6c93ec61b224df452d02abf733bd7b7e095ab667f671a8bd53e3885
+result: f0924cc9d6c93ec61b224df452d02abf733bd7b7e095ab667f671a8bd53e3885
+compare...
+correct
+
+Чт 23 янв 2025 21:52:28 MSK
+test3.txt
+counting crc...
+source: a43c0473bf864b835e5d0e2ae6559f412fd90dc8f982f87d700f213777f0cfc7
+result: a43c0473bf864b835e5d0e2ae6559f412fd90dc8f982f87d700f213777f0cfc7
+compare...
+correct
+
+Чт 23 янв 2025 21:52:32 MSK
+test4.txt
+counting crc...
+source: d7f2c509795bb7ae5dc8b77d5fe05f92454f16f045d0830331dee6e8aaaf5354
+result: d7f2c509795bb7ae5dc8b77d5fe05f92454f16f045d0830331dee6e8aaaf5354
+compare...
+correct
+
+Чт 23 янв 2025 21:52:34 MSK
+test_picture.bmp
+counting crc...
+source: 4f3f8ca31c03a833c541a0f01cc2dbb2443c04e5fa29555a783ca7e2a07039c5
+result: 4f3f8ca31c03a833c541a0f01cc2dbb2443c04e5fa29555a783ca7e2a07039c5
+compare...
+correct
+
+Чт 23 янв 2025 21:52:36 MSK
+test_picture.jpg
+counting crc...
+source: 2e9b5302c9dabf93148e3aa1a456d4b2d42c741a0db353be96cd21631b9fc01d
+result: 2e9b5302c9dabf93148e3aa1a456d4b2d42c741a0db353be96cd21631b9fc01d
+compare...
+correct
+
+Чт 23 янв 2025 21:53:36 MSK
+The_Cathedral.avi
+counting crc...
+source: 4844ae2980b9229ef1580b9cd9089b7ee3f87b7a866a60487723b6d010d0f950
+result: 4844ae2980b9229ef1580b9cd9089b7ee3f87b7a866a60487723b6d010d0f950
+compare...
+correct
