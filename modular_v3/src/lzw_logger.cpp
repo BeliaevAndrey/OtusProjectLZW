@@ -29,11 +29,7 @@ void Logger::info(std::string msg)
     delete[] log_entry;
 }
 
-void Logger::countChars(const char* msg, size_t &len)
-{
-    for (;msg[len] != '\0'; len++);
-    std::cout << '\t' << len << std::endl;
-}
+void Logger::countChars(const char* msg, size_t &len) { for (;msg[len] != '\0'; len++); }
 
 void Logger::error(const char* msg)
 {
